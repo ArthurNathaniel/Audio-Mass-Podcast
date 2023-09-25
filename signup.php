@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         header("Location: login.php");
-        exit(); // Ensure that the script stops here after the redirect
+        exit(); 
     } else {
         echo "Error: " . $stmt->error;
     }

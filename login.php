@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if (password_verify($password, $hashed_password)) {
-            // Password is correct, create a session and set the user_id and username
+
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $username;
-            header("Location: home.php");
-            exit(); // Ensure that the script stops here after the redirect
+            header("Location: index.php");
+            exit(); 
         } else {
             echo "Invalid password";
         }

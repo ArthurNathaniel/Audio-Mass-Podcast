@@ -52,6 +52,7 @@
     color: #fff;
     text-align: center;
     border: none;
+    cursor: pointer;
 }
 
 .redirect{
