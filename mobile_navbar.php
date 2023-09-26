@@ -30,16 +30,15 @@
             }
 
             .mobileOne {
-                height: 50px;
-                width: 50px;
+              
 
-                background-color: #000;
+                
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                border: 2px solid;
-                color: #fff;
+               
+                color: #000;
                 cursor: pointer;
                 margin-block: 25px;
 
