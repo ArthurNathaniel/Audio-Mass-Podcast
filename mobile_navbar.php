@@ -10,9 +10,10 @@
 
 <body>
     <style>
-        .mobileNav{
+        .mobileNav {
             display: none;
         }
+
         @media only screen and (max-width: 1250px) {
             .mobileNav {
                 width: 100%;
@@ -55,19 +56,19 @@
     </style>
     <div class="mobileNav">
         <div class="mobileOne">
-            <h4>+H</h4>
+            <h4><i class="fas fa-home"></i></h4>
             <p>Home</p>
         </div>
         <div class="mobileOne">
-            <h4>+ A</h4>
+            <h4><i class="fas fa-info-circle"></i></h4>
             <p>About</p>
         </div>
         <div class="mobileOne">
-            <h4>+ D</h4>
+            <h4><i class="fas fa-donate"></i></h4>
             <p>Donate</p>
         </div>
         <div class="mobileOne">
-            <h4>+ L</h4>
+            <h4><i class="fas fa-sign-out-alt"></i></h4>
             <p>Logout</p>
         </div>
     </div>
