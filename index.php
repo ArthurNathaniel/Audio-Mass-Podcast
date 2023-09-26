@@ -1,23 +1,17 @@
 <?php
 session_start();
 
-
 if (isset($_SESSION['user_id'])) {
-
     $username = $_SESSION['username'];
 } else {
-
     header("Location: login.php");
     exit();
 }
 
-// Include the database connection code here
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "audio_mass";
-
-
 
 try {
     $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -47,7 +41,6 @@ try {
             <div class="profile-text">
                 <div class="profile-info">
                     <h1>Hello <?php echo $_SESSION['username']; ?>!</h1>
-
                     <p>Welcome to the Audio Mass Podcast</p>
                 </div>
                 <div class="profile-icon">
@@ -81,37 +74,21 @@ try {
     </section>
     <div class="recently" id="podcastEpisodes">
         <?php
-
         $sql = "SELECT * FROM podcast_episodes ORDER BY timestamp DESC";
         $stmt = $pdo->query($sql);
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<div class="h-all">';
             echo '<div class="h-image">';
-
             echo '</div>';
             echo '<div class="h-text">';
             echo '<div class="h-info">';
             echo '<h3>' . htmlspecialchars($row["title"]) . '</h3>';
 
-
             $uploadTime = strtotime($row["timestamp"]);
-            $currentTimestamp = time();
+            $formattedTime = date("M d, Y", $uploadTime); // Format the timestamp as "Month Day, Year"
 
-            $timeDifference = $currentTimestamp - $uploadTime;
-
-            if ($timeDifference < 60) {
-
-                $formattedTime = $timeDifference . ' sec ago';
-            } elseif ($timeDifference < 3600) {
-
-                $formattedTime = floor($timeDifference / 60) . ' min ago';
-            } else {
-
-                $formattedTime = floor($timeDifference / 3600) . ' hour ago';
-            }
-
-            echo '<p><i class="fa-solid fa-clock"></i> ' . $formattedTime . '</p>'; // Display the formatted time
+            echo '<p><i class="fa-solid fa-clock"></i> ' . $formattedTime . '</p>';
             echo '</div>';
             echo '<div class="h-icon">';
             echo '<h1 class="play-btn" data-audio="' . htmlspecialchars($row["audio_url"]) .  '"><i class="fa-solid fa-circle-play circle"></i></h1>';
@@ -127,15 +104,12 @@ try {
             echo '</div>';
         }
         ?>
-
     </div>
-
+    <?php include 'mobile_navbar.php'; ?>
     <?php include 'footer.php'; ?>
     <script src="./javascript/home.js"></script>
     <script src="./javascript/search.js"></script>
     <script src="./javascript/play.js"></script>
-
-
 </body>
 
 </html>

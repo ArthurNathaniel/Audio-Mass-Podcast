@@ -1,25 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap'); */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-family: 'Sora', sans-serif;
+      font-family: 'Gilroy-Regular';
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-family: 'Sora', sans-serif;
+      font-family: 'Gilroy-Regular';
 }
-
+@font-face {
+   font-family: 'Gilroy-Regular';
+   src: url('Gilroy-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
  h1,
  h3,
  h2,
  h4,
  h5,
  h6 {
-font-family: 'Sora', sans-serif;
+   font-family: 'Gilroy-Regular';
  }
 
  footer{
@@ -91,4 +94,15 @@ font-family: 'Sora', sans-serif;
     font-weight: 900;
     font-size: 1rem;
 
+ }
+ @media only screen and (max-width: 1250px) {
+   footer{
+      display: none;
+   }
+ }
+ @media only screen and (max-width: 750px) {
+  
+    .footer-last {
+       display: none;
+    }
  }
